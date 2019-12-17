@@ -1,10 +1,10 @@
 
 const getUserChoice = userInput =>{
     userInput = userInput.toLowerCase();
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors'){
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb'){
         return userInput;
-    } else {
-        console.log('error');
+    }  else {
+        console.log('Error');
     }
 };
 
@@ -45,11 +45,13 @@ const determineWinner = (userChoice,computerChoice) => {
             console.log('User Win');
         }
     }
-
-}
+    if(userChoice === 'bomb'){
+        console.log('User Default Win');
+    }
+};
 
 const playGame = () =>{
-    const userChoice = getUserChoice('rock');
+    const userChoice = getUserChoice('bomb');
     const computerChoice = getComputerChoice();
     console.log('User Pick : ' + `${userChoice}`);
     console.log('Computer Choose : ' + `${computerChoice}`);
